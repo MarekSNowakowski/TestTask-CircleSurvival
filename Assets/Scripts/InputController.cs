@@ -9,6 +9,7 @@ public class InputController : MonoBehaviour
     private Camera mainCamera;
     private RaycastHit hit;
     private Ray ray;
+    private bool gameOver = false;
 
     private const string CIRCLE_TAG = "Circle";
 
@@ -19,7 +20,7 @@ public class InputController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!gameOver && Input.GetMouseButtonDown(0))
         {
             ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
@@ -35,4 +36,8 @@ public class InputController : MonoBehaviour
         }
     }
 
+    public void BlockShooting()
+    {
+        gameOver = true;
+    }
 }

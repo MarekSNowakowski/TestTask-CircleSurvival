@@ -8,7 +8,12 @@ public class ScoreManager : MonoBehaviour
     private float currentScore = 0;
     private Text scoreText;
 
+    private bool gameOver = false;
+
     private TimeSpan timeSpan;
+
+    [SerializeField]
+    GameOverScoreUpdate gameOverScoreUpdate;
 
     private void Start()
     {
@@ -17,8 +22,11 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        currentScore += Time.deltaTime;
-        UpdateScoreText();
+        if(!gameOver)
+        {
+            currentScore += Time.deltaTime;
+            UpdateScoreText();
+        }
     }
 
     private void UpdateScoreText()
@@ -27,8 +35,9 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = timeSpan.ToString("mm':'ss");
     }
 
-    public float GetScore()
+    public void FinishGame()
     {
-        return currentScore;
+        gameOver = true;
+        gameOverScoreUpdate.UpdateScore(currentScore);
     }
 }
