@@ -18,6 +18,7 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         scoreText = GetComponent<Text>();
+        Time.timeScale = 1;
     }
 
     private void Update()
@@ -37,6 +38,7 @@ public class ScoreManager : MonoBehaviour
 
     public void FinishGame()
     {
+        Time.timeScale = 0;
         gameOver = true;
         gameOverScoreUpdate.UpdateScore(currentScore);
     }

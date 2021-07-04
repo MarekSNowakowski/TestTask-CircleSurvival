@@ -16,7 +16,7 @@ public class HighScoreUpdate : MonoBehaviour
 
     private void UpdateHighScoreText()
     {
-        float highScore = PlayerPrefs.GetFloat(HIGH_SCORE_KEY, 0);
+        float highScore = PlayerPrefs.GetInt(HIGH_SCORE_KEY, 0);
         TimeSpan highScoreTimeSpan = TimeSpan.FromSeconds(highScore);
         highScoreText.text = highScoreTimeSpan.ToString("mm':'ss");
     }

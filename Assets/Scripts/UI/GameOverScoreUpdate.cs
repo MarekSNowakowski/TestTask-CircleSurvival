@@ -14,12 +14,12 @@ public class GameOverScoreUpdate : MonoBehaviour
 
     public void UpdateScore(float score)
     {
-        float highScore = PlayerPrefs.GetFloat(HIGH_SCORE_KEY, 0);
+        int highScore = PlayerPrefs.GetInt(HIGH_SCORE_KEY, 0);
 
-        if (score > highScore)
+        if (Mathf.FloorToInt(score) > highScore)
         {
             highScoreText.text = "New high score!";
-            PlayerPrefs.SetFloat(HIGH_SCORE_KEY, score);
+            PlayerPrefs.SetInt(HIGH_SCORE_KEY, Mathf.FloorToInt(score));
         }
         else
         {
