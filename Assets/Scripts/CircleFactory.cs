@@ -133,6 +133,11 @@ public class CircleFactory : MonoBehaviour
         }
         return false;
     }
+
+    public void StopSpawning()
+    {
+        spawning = false;
+    }
 }
 
 [Serializable]

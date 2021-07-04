@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverEvent: {fileID: 11400000, guid: 2bb997f605b321144b05e06e11ac97d5, type: 2}
+  explodeEffect: {fileID: 1575711633752654514, guid: 39981d9b8ad834f46bf3007faaa823dd,
+    type: 3}
   explosionTimeRange: {x: 2, y: 4}
   redCircleTransform: {fileID: 768494655048399770}
   speedUpRate: 15
+  popEffect: {fileID: 1575711633752654514, guid: de3f31ea7fec5f34cbce76a5e7d53c29,
+    type: 3}
 --- !u!1 &8500247747431157606
 GameObject:
   m_ObjectHideFlags: 0

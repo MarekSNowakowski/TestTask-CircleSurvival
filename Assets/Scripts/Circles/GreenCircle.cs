@@ -13,6 +13,9 @@ public class GreenCircle : Circle
     [SerializeField, Range(1,99)]
     private float speedUpRate;
 
+    [SerializeField]
+    private GameObject popEffect;
+
     private bool gameEnded = false;
 
     private void Start()
@@ -29,22 +32,36 @@ public class GreenCircle : Circle
 
     public override void OnCircleClicked()
     {
+        PlayPopEffect();
         Destroy(gameObject);
     }
 
+    protected void PlayPopEffect()
+    {
+        var effect = Instantiate(popEffect, transform.position, Quaternion.identity);
+        Destroy(effect, EFFECT_TIME);
+    }
+
     private void Update()
-    {  
-        if(!gameEnded)
+    {
+        if (!gameEnded)
         {
             timeTillExplosion -= Time.deltaTime;
             if (timeTillExplosion < 0)
             {
-                gameEnded = true;
-                EndGame();
+                Explode();
             }
 
             var scale = 1f - timeTillExplosion / startTimeTillExplosion;
             redCircleTransform.localScale = new Vector3(scale, scale, 1f);
         }
+    }
+
+    private void Explode()
+    {
+        gameEnded = true;
+        PlayExplodeEffect();
+        EndGame();
+        Destroy(gameObject);
     }
 }

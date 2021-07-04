@@ -8,7 +8,9 @@ public class BlackCircle : Circle
 
     public override void OnCircleClicked()
     {
+        PlayExplodeEffect();
         EndGame();
+        Destroy(gameObject);
     }
 
     private void Start()
