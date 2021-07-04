@@ -3,28 +3,22 @@
 /// <summary>
 /// On click shoot ray in touch position looking for a circle
 /// </summary>
-[RequireComponent(typeof(Camera))]
 public class InputController : MonoBehaviour
 {
-    private Camera mainCamera;
     private RaycastHit hit;
     private Ray ray;
     private bool gameOver = false;
 
     private const string CIRCLE_TAG = "Circle";
-
-    private void Start()
-    {
-        mainCamera = GetComponent<Camera>();
-    }
+    private const float RAY_DISTANCE = 10f;
 
     private void Update()
     {
         if (!gameOver && Input.GetMouseButtonDown(0))
         {
-            ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray,out hit,100f))
+            if (Physics.Raycast(ray,out hit, RAY_DISTANCE))
             {
                 //Check tag, than try to get Circle component
                 if(hit.collider.gameObject.CompareTag(CIRCLE_TAG) &&

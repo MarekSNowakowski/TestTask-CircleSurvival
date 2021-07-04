@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea99531211f67f46ad3ff6d158cac6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverEvent: {fileID: 11400000, guid: 2bb997f605b321144b05e06e11ac97d5, type: 2}
 --- !u!1001 &9213852144816714407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -97,7 +98,7 @@ PrefabInstance:
     - target: {fileID: 2079320558043520663, guid: fb3c56e65b447584aad530649698777d,
         type: 3}
       propertyPath: m_Name
-      value: BlackCircle Variant
+      value: BlackCircle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb3c56e65b447584aad530649698777d, type: 3}
