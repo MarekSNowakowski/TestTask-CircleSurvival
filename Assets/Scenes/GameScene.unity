@@ -1519,8 +1519,8 @@ MonoBehaviour:
   - circlePrefab: {fileID: 7135134140757486640, guid: 739a26a06c478dd4e9c0adb8fc6fa899,
       type: 3}
     probability: 10
-  circleSpawnRate: 1.52
-  speedUpRate: 1
+  circleSpawnRate: 1.5
+  speedUpRate: 5
 --- !u!4 &1977199433
 Transform:
   m_ObjectHideFlags: 0

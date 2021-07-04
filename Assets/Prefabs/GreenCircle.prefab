@@ -15,6 +15,7 @@ MonoBehaviour:
   gameOverEvent: {fileID: 11400000, guid: 2bb997f605b321144b05e06e11ac97d5, type: 2}
   explosionTimeRange: {x: 2, y: 4}
   redCircleTransform: {fileID: 768494655048399770}
+  speedUpRate: 15
 --- !u!1 &8500247747431157606
 GameObject:
   m_ObjectHideFlags: 0

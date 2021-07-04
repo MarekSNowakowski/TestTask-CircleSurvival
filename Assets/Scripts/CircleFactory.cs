@@ -11,7 +11,7 @@ public class CircleFactory : MonoBehaviour
     [SerializeField, Range(0.1f,4)]
     private float circleSpawnRate;
     private float currentCircleSpawnRate;
-    [SerializeField]
+    [SerializeField, Range(1,10)]
     private float speedUpRate;
 
     private Vector2 spawnAreaMin;
@@ -37,6 +37,7 @@ public class CircleFactory : MonoBehaviour
             {
                 SpawnCircle();
                 timeToNextSpawn = 1 / currentCircleSpawnRate;
+                currentCircleSpawnRate += circleSpawnRate * (speedUpRate/1000f);
             }
         }
     }

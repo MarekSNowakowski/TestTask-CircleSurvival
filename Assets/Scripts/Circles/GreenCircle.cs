@@ -10,10 +10,19 @@ public class GreenCircle : Circle
     [SerializeField]
     private Transform redCircleTransform;
 
+    [SerializeField, Range(1,99)]
+    private float speedUpRate;
+
     private bool gameEnded = false;
 
     private void Start()
     {
+        SetExplisionTimeLeft();
+    }
+
+    private void SetExplisionTimeLeft()
+    {
+        explosionTimeRange -= explosionTimeRange * Time.timeSinceLevelLoad /60f * speedUpRate /100f;
         startTimeTillExplosion = Random.Range(explosionTimeRange.x, explosionTimeRange.y);
         timeTillExplosion = startTimeTillExplosion;
     }
